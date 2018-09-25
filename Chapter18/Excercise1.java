@@ -2,22 +2,31 @@ import java.util.Scanner;
 
 public class Excercise1 {
     public static void main(String[] args) {
-        String item;
-        int price;
-        int delivery;
         Scanner scan = new Scanner(System.in);
-
-        System.out.println("Enter the item: ");
-        item = scan.nextLine();
+        int account;
+        double amount;
+        System.out.println("Are you using a checking or savings account: (1 for checking, 2 for savings)");
+        account = scan.nextInt();
         
-        System.out.println("Enter the price of the item: ");
-        price = scan.nextInt();
-        
-        System.out.println("Overnight delivery: (0 == no, 1 == yes)");
-        delivery = scan.nextInt();
-        
-        System.out.println("");
-        System.out.println("Invoice: ");
-
+        if (account == 1) {
+            System.out.println("Please enter the total amount of money in your account:");
+            amount = scan.nextInt();
+            if (amount < 1000) {
+                System.out.println("You have a $0.15 service charge per check.");
+            }
+            else if (amount >= 1000) {
+                System.out.println("You do not have a service charge for checks.");
+            }
+        }
+        if (account == 2) {
+            System.out.println("Please enter the total amount of money in your account:");
+            amount = scan.nextInt();
+            if (amount < 1500) {
+                System.out.println("You have a $0.15 service charge per check.");
+            }
+            else if (amount >= 1500) {
+                System.out.println("You do not have a service charge for checks.");
+            }
+        }
     }
 }
