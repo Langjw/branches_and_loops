@@ -8,6 +8,9 @@ public class Excercise3 {
         while (divisible = true) {
             System.out.println("Squares: " + square);
             square++;
+            if (square >= 100) {
+                divisible = false;
+            }
         }
     }
 }
